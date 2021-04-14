@@ -1,5 +1,6 @@
 const express = require("express");
 const blogs = require("./blogs.js");
+let blogCount = 1;
 
 const server = express();
 
@@ -20,18 +21,50 @@ server.get("/", (request, response) => {
 </head>
 <body>
   <header>
+  <h1>Twaddle</h1>
   </header>
   <main>
-    <h1>Twaddle</h1>
   <ul>${messages}</ul>
+  <a href="/add-blog">Write post +</a>
   </main>
-  <footer>
-  </footer>
 </body>
 </html>
 `;
     response.send(html);
   });
+
+  server.get("/add-blog", (request, response) => {
+    const html = `
+    <!doctype html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <title>Twadd away!</title>
+      </head>
+      <body>
+        <h1>Create a blog post</h1>
+        <form method="POST">
+          // <label id="name">Blogger name</label>
+          // <input id="name" name="name">
+          <label id="message">Message</label>
+          <input id="message" name="message">
+          <button>Submit</button>
+        </form>
+      </body>
+    </html>
+    `;
+    response.send(html);
+  });
+
+  const bodyParser = express.urlencoded({ extended: false });
+
+server.post("/add-blog", bodyParser, (request, response) => {
+  blogCount++;
+  const newBlog = request.body;
+  const name = newBlog.name;
+  blogs[`message${blogCount}`] = newBlog;
+  response.redirect("/");
+});
 
 
 const PORT = 3000;
