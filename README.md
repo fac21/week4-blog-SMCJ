@@ -2,10 +2,10 @@
 Week 4: Servers
 
 ## Roles: 🧠
-Deployment: Team
-User: Team
-Facilitator: Team
-Quality: Team
+- Deployment: Team
+- User: Team
+- Facilitator: Team
+- Quality: Team
 
 ## Features:
 - Submit new blog entries
