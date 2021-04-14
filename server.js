@@ -1,8 +1,14 @@
 const express = require("express");
+const blogs = require("./blogs.js");
 
 const server = express();
 
-const html = `
+server.get("/", (request, response) => {
+    let messages = "";
+    for (let blog of Object.values(blogs)) {
+      messages += `<li>${blog.message}</li>`;
+    }
+    const html = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,15 +22,14 @@ const html = `
   <header>
   </header>
   <main>
-    <h1>TEST</h1>
+    <h1>Twaddle</h1>
+  <ul>${messages}</ul>
   </main>
   <footer>
   </footer>
 </body>
 </html>
 `;
-
-server.get("/", (request, response) => {
     response.send(html);
   });
 
