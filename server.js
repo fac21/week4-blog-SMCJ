@@ -9,30 +9,41 @@ let blogCount = 1;
 
 server.get("/", (request, response) => {
     let messages = "";
+    let blogIds = Object.keys(blogs);
+    for (let i = 0; i < blogIds.length; i++) {
+      messages += `<li>
+      <span>${blogs[blogIds[i]].message}</span>
+      <form action="/delete-blog" method="POST" style="display: inline;">
+        <button name="name" value="${blogIds[i]}" aria-label="Delete ${blogs[blogIds[i]].message}">
+          &times;
+        </button>
+      </form>
+    </li>`;
+    }
     for (let blog of Object.values(blogs)) {
-      messages += `<li>${blog.message}</li>`;
+      
     }
     const html = `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <title>Document</title>
-</head>
-<body>
-  <header>
-  <h1><img src='twaddle2.png'></h1>
-  </header>
-  <main>
-  <ul>${messages}</ul>
-  <a href="/add-blog">Write post +</a>
-  </main>
-</body>
-</html>
-`;
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="">
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <title>Document</title>
+    </head>
+    <body>
+      <header>
+      <h1><img src='twaddle2.png'></h1>
+      </header>
+      <main>
+      <ul>${messages}</ul>
+      <a href="/add-blog">Write post +</a>
+      </main>
+    </body>
+    </html>
+    `;
     response.send(html);
   });
 
@@ -66,6 +77,13 @@ server.post("/add-blog", bodyParser, (request, response) => {
   const newBlog = request.body;
   const name = newBlog.name;
   blogs[`message${blogCount}`] = newBlog;
+  response.redirect("/");
+});
+
+server.post("/delete-blog", bodyParser, (request, response) => {
+  const nameToDelete = request.body.name;
+  console.log(request.body);
+  delete blogs[nameToDelete];
   response.redirect("/");
 });
 
