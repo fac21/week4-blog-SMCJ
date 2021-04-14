@@ -1,8 +1,11 @@
 const express = require("express");
 const blogs = require("./blogs.js");
-let blogCount = 1;
+const staticHandler = express.static("public");
 
 const server = express();
+server.use(staticHandler);
+
+let blogCount = 1;
 
 server.get("/", (request, response) => {
     let messages = "";
@@ -16,12 +19,12 @@ server.get("/", (request, response) => {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
   <title>Document</title>
 </head>
 <body>
   <header>
-  <h1>Twaddle</h1>
+  <h1><img src='twaddle2.png'></h1>
   </header>
   <main>
   <ul>${messages}</ul>
