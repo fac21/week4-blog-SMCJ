@@ -1,5 +1,7 @@
-# week4-blog-SMCJ
-Week 4: Servers
+# Twaddle
+FAC21 Week 4: Servers
+
+🌐 See our blog site at [fac21-twaddle.herokuapp.com/](http://fac21-twaddle.herokuapp.com/)
 
 ## Roles: 🧠
 - Deployment: Team
