@@ -9,7 +9,7 @@ it("creates a homepage", () => {
 
 it("can navigate pages", () => {
   cy.visit("http://localhost:3000/");
-  cy.contains("Write post").click();
+  cy.contains("Write a new post").click();
   cy.url().should("include", "/add-blog");
 });
 
@@ -43,7 +43,6 @@ function deleteBlog() {
 //   cy.get("#blog-entry").submit();
 // })
 
-f
 
 
 
