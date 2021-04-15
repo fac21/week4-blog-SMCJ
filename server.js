@@ -34,7 +34,7 @@ server.get("/", (request, response) => {
     </head>
     <body>
       <header>
-      <h1><img src='twaddle2.png'></h1>
+      <h1><img src='twaddle2.png' alt='logo'></h1>
       </header>
       <main>
       <ul>${messages}</ul>
@@ -56,7 +56,7 @@ server.get("/", (request, response) => {
       </head>
       <body>
         <h1>Create a blog post</h1>
-        <form method="POST">
+        <form id='blog-entry' method="POST">
           <label for="author">Blogger name</label>
           <input id="author" name="author">
           <label for="message">Message</label>
