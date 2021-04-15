@@ -53,16 +53,18 @@ server.get("/add-blog", (request, response) => {
   const html = `
   <!doctype html>
   <html>
+  <link rel="stylesheet" type="text/css" href="style.css">
     <head>
       <meta charset="utf-8">
       <title>Twadd away!</title>
     </head>
     <body>
-      <h1>Create a blog post</h1>
-      <form id='blog-entry' method="POST">
-        <label for="author">Blogger name</label>
+      <h1>Twadd Away!</h1>
+      
+      <form class="flex-column stack-xs" id='blog-entry' method="POST">
+        <label class="form-label" for="author">Blogger name</label>
         <input id="author" name="author">
-        <label for="message">Message</label>
+        <label class="form-label" for="message">Message</label>
         <input id="message" name="message">
         <button>Submit</button>
       </form>

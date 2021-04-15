@@ -4,15 +4,22 @@ body {
  justify-content: center; 
  align-items: center;
  font-family: Helvetica, Arial, sans-serif;
+ background-color: #d8e3e7;
+ color: #132c33;
 }
 
 .stack-sm > * + * {
   margin-top: 1rem;
 }
 
-p{
-  display: inline;
-  
+.stack-xs > * + * {
+ margin-top: 0.5rem;
+}
+
+.form-label {
+  max-width: 800px;
+  min-width: 100px;
+  width: 30%;
 }
 
 article{
@@ -36,6 +43,11 @@ div{
   border-radius: 20px;
 }
 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 button{
   float: right;
   border-radius: 20px;
@@ -55,4 +67,9 @@ a{
 
 a:visited{
   color: rgb(6, 103, 116)
+}
+
+@media (min-width: 500px) {
+
+
 }
