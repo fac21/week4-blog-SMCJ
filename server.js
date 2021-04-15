@@ -13,7 +13,7 @@ server.get("/", (request, response) => {
   for (let i = 0; i < blogIds.length; i++) {
     messages += `<article class='stack-sm'>
     <div class="blog-info">
-      <p class="inline">${blogs[blogIds[i]].author}</p>
+      <p class="inline author-name">${blogs[blogIds[i]].author}</p>
       <span class="sm-white">${blogs[blogIds[i]].date}</span>
     </div>
     <div class="message"><p>${blogs[blogIds[i]].message}</p></div>
@@ -35,6 +35,8 @@ server.get("/", (request, response) => {
     <link rel="icon" type="image/png" href="penguin.png"/>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <title>Twaddle</title>
   </head>
   <body>
@@ -58,6 +60,8 @@ server.get("/add-blog", (request, response) => {
   <html>
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="icon" type="image/png" href="penguin.png"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <head>
       <meta charset="utf-8">
       <title>Twadd away!</title>

@@ -7,9 +7,13 @@ body {
  flex-direction: column;
  justify-content: center; 
  align-items: center;
- font-family: Helvetica, Arial, sans-serif;
- background-color: #d8e3e7;
+ font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+ background-color: #ebf8fc;
  color: #132c33;
+}
+
+main {
+  /* background-image: url("./snowflakes-png-41274.png"); */
 }
 
 .add-blog-page {
@@ -54,7 +58,7 @@ article{
   margin-top: 2rem;
   border: solid  rgb(96, 157, 247) 2px;
   padding: 1rem 1rem 3rem 1rem;
-  background-color: rgb(96, 186, 247);
+  background-color: rgb(96 186 247);
   border-radius: 20px;
 }
 
@@ -62,10 +66,15 @@ article{
   display: inline;
 }
 
+.author-name {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
 .blog-info {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;;
 }
 
 .btn {
@@ -111,7 +120,3 @@ a:visited{
   color: rgb(6, 103, 116)
 }
 
-@media (min-width: 500px) {
-
-
-}
