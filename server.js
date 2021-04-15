@@ -56,7 +56,7 @@ server.get("/", (request, response) => {
       </head>
       <body>
         <h1>Create a blog post</h1>
-        <form method="POST">
+        <form id='blog-entry' method="POST">
           <label for="author">Blogger name</label>
           <input id="author" name="author">
           <label for="message">Message</label>
