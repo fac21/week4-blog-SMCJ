@@ -12,6 +12,7 @@ server.get("/", (request, response) => {
     let blogIds = Object.keys(blogs);
     for (let i = 0; i < blogIds.length; i++) {
       messages += `<li>
+      <span>${blogs[blogIds[i]].author} –</span>
       <span>${blogs[blogIds[i]].message}</span>
       <form action="/delete-blog" method="POST" style="display: inline;">
         <button name="name" value="${blogIds[i]}" aria-label="Delete ${blogs[blogIds[i]].message}">
@@ -20,9 +21,7 @@ server.get("/", (request, response) => {
       </form>
     </li>`;
     }
-    for (let blog of Object.values(blogs)) {
-      
-    }
+  
     const html = `
     <!DOCTYPE html>
     <html lang="en">
@@ -31,7 +30,7 @@ server.get("/", (request, response) => {
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="description" content="">
       <link rel="stylesheet" type="text/css" href="style.css">
-      <title>Document</title>
+      <title>Twaddle</title>
     </head>
     <body>
       <header>
@@ -58,9 +57,9 @@ server.get("/", (request, response) => {
       <body>
         <h1>Create a blog post</h1>
         <form method="POST">
-          // <label id="name">Blogger name</label>
-          // <input id="name" name="name">
-          <label id="message">Message</label>
+          <label for="author">Blogger name</label>
+          <input id="author" name="author">
+          <label for="message">Message</label>
           <input id="message" name="message">
           <button>Submit</button>
         </form>
@@ -75,15 +74,15 @@ server.get("/", (request, response) => {
 server.post("/add-blog", bodyParser, (request, response) => {
   blogCount++;
   const newBlog = request.body;
-  const name = newBlog.name;
+  const author = newBlog.author;
   blogs[`message${blogCount}`] = newBlog;
   response.redirect("/");
 });
 
 server.post("/delete-blog", bodyParser, (request, response) => {
-  const nameToDelete = request.body.name;
+  const postToDelete = request.body.name;
   console.log(request.body);
-  delete blogs[nameToDelete];
+  delete blogs[postToDelete];
   response.redirect("/");
 });
 
