@@ -34,7 +34,7 @@ server.get("/", (request, response) => {
     </head>
     <body>
       <header>
-      <h1><img src='twaddle2.png'></h1>
+      <h1><img src='twaddle2.png' alt='logo'></h1>
       </header>
       <main>
       <ul>${messages}</ul>
