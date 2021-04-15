@@ -1,3 +1,58 @@
 body {
+ display: flex;
+ flex-direction: column;
+ justify-content: center; 
+ align-items: center;
+ font-family: Helvetica, Arial, sans-serif;
+}
+
+.stack-sm > * + * {
+  margin-top: 1rem;
+}
+
+p{
+  display: inline;
   
+}
+
+article{
+  margin-top: 2rem;
+  border: solid  rgb(96, 157, 247) 2px;
+  padding: 1rem 1rem 3rem 1rem;
+  background-color: rgb(96, 186, 247);
+  border-radius: 20px;
+}
+
+span{
+  font-size: 0.5rem;
+  color: grey; 
+  font-style: italic;
+}
+
+div{
+  margin-top: 0.5rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 20px;
+}
+
+button{
+  float: right;
+  border-radius: 20px;
+  border: white 1px solid;
+  margin-top: 1rem;
+}
+
+a{
+  color:blueviolet;
+  border: black solid 1px;
+  border-radius: 8px;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  float:right;
+  cursor: pointer;
+}
+
+a:visited{
+  color: rgb(6, 103, 116)
 }

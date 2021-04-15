@@ -11,16 +11,16 @@ server.get("/", (request, response) => {
   let messages = "";
   let blogIds = Object.keys(blogs);
   for (let i = 0; i < blogIds.length; i++) {
-    messages += `<li>
-    <span>${blogs[blogIds[i]].author} –</span>
-    <span>${blogs[blogIds[i]].message}</span>
+    messages += `<article class='stack-sm'>
+    <p>${blogs[blogIds[i]].author}</p>
     <span>${blogs[blogIds[i]].date}</span>
+    <div><p>${blogs[blogIds[i]].message}</p></div>
     <form action="/delete-blog" method="POST" style="display: inline;">
       <button name="name" value="${blogIds[i]}" aria-label="Delete ${blogs[blogIds[i]].message}">
-        &times;
+        <i class="far fa-trash-alt"></i>
       </button>
     </form>
-  </li>`;
+  </article>`;
   }
   
   const html = `
@@ -31,6 +31,7 @@ server.get("/", (request, response) => {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <title>Twaddle</title>
   </head>
   <body>
@@ -38,8 +39,8 @@ server.get("/", (request, response) => {
     <h1><img src='twaddle2.png' alt='logo'></h1>
     </header>
     <main>
-    <ul>${messages}</ul>
-    <a href="/add-blog">Write post +</a>
+    <section>${messages}</section>
+    <a href="/add-blog">Write a new post +</a>
     </main>
   </body>
   </html>
@@ -88,8 +89,7 @@ server.post("/add-blog", bodyParser, (request, response) => {
 });
 
 server.post("/delete-blog", bodyParser, (request, response) => {
-  const postToDelete = request.body.name;
-  console.log(request.body);
+  const postToDelete = request.body.name; 
   delete blogs[postToDelete];
   response.redirect("/");
 });
