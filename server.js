@@ -12,9 +12,11 @@ server.get("/", (request, response) => {
   let blogIds = Object.keys(blogs);
   for (let i = 0; i < blogIds.length; i++) {
     messages += `<article class='stack-sm'>
-    <p>${blogs[blogIds[i]].author}</p>
-    <span>${blogs[blogIds[i]].date}</span>
-    <div><p>${blogs[blogIds[i]].message}</p></div>
+    <div class="blog-info">
+      <p class="inline">${blogs[blogIds[i]].author}</p>
+      <span class="sm-white">${blogs[blogIds[i]].date}</span>
+    </div>
+    <div class="message"><p>${blogs[blogIds[i]].message}</p></div>
     <form action="/delete-blog" method="POST" style="display: inline;">
       <button name="name" value="${blogIds[i]}" aria-label="Delete ${blogs[blogIds[i]].message}">
         <i class="far fa-trash-alt"></i>
@@ -30,6 +32,7 @@ server.get("/", (request, response) => {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
+    <link rel="icon" type="image/png" href="penguin.png"/>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <title>Twaddle</title>
@@ -40,7 +43,7 @@ server.get("/", (request, response) => {
     </header>
     <main>
     <section>${messages}</section>
-    <a href="/add-blog">Write a new post +</a>
+    <a class="btn" href="/add-blog">Write a new post +</a>
     </main>
   </body>
   </html>
@@ -54,19 +57,25 @@ server.get("/add-blog", (request, response) => {
   <!doctype html>
   <html>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="icon" type="image/png" href="penguin.png"/>
     <head>
       <meta charset="utf-8">
       <title>Twadd away!</title>
     </head>
-    <body>
-      <h1>Twadd Away!</h1>
-      
-      <form class="flex-column stack-xs" id='blog-entry' method="POST">
-        <label class="form-label" for="author">Blogger name</label>
-        <input id="author" name="author">
-        <label class="form-label" for="message">Message</label>
-        <input id="message" name="message">
-        <button>Submit</button>
+    <body class="add-blog-page">
+    <h1 class="center"><img src='twaddle2.png' alt='logo'></h1>
+      <footer>
+        <h2 class="inline"> *twaddle </h2>
+        <span>/ˈtwɒd(ə)l/</span>
+        <p class="inline">Trivial or foolish speech or writing; Nonsense.
+        "He dismissed the novel as self-indulgent twaddle"</p>
+      </footer>
+      <form class="flex-column stack-xs add-form" id='blog-entry' method="POST">
+        <label class="form-label" for="author">Blogger name:</label>
+        <input id="author" name="author" required>
+        <label class="form-label" for="message">Write your twaddle* here:</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+        <button class="btn">Submit</button>
       </form>
     </body>
   </html>
