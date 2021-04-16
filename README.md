@@ -3,6 +3,11 @@ FAC21 Week 4: Servers
 
 🌐 See our blog site at [fac21-twaddle.herokuapp.com/](http://fac21-twaddle.herokuapp.com/)
 
+To run this app locally:
+- clone the git repo
+- run `npm install`
+- run `npm run dev` and follow the link in the terminal to `localhost:3000`.
+
 ## Roles: 🧠
 - Deployment: Team
 - User: Team
