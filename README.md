@@ -12,6 +12,9 @@ FAC21 Week 4: Servers
 ## Features:
 - Submit new blog entries
 - See other user's blog entries
+- Delete others' blog posts
+
+![image](https://user-images.githubusercontent.com/31373245/115014086-c9f6fa00-9ea9-11eb-8701-7543e47e5252.png)
 
 ## Work Process:
 1. Set up of node, npm, cypress, express 
@@ -31,5 +34,7 @@ FAC21 Week 4: Servers
 - Tests for each server route ✔️
 - A responsive, mobile-first design ✔️
 - Ensure your app is accessible to as many different users as possible ✔️
+
+## Accessibility
 
 ![image](https://user-images.githubusercontent.com/31373245/115013907-91572080-9ea9-11eb-9aee-ee849fe0d2ab.png)
