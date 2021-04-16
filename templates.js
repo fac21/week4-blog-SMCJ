@@ -9,8 +9,8 @@
       <link rel="icon" type="image/png" href="penguin.png"/>
       <link rel="stylesheet" type="text/css" href="style.css">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-      <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E
-      <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
       <title>Twaddle</title>
     </head>
     <body>
@@ -30,13 +30,14 @@ function addBlog() {
     return `
  <!doctype html>
   <html>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="icon" type="image/png" href="penguin.png"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <head>
       <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Twadd away!</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <link rel="icon" type="image/png" href="penguin.png"/>
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     </head>
     <body class="add-blog-page">
     <h1 class="center"><img src='twaddle2.png' alt='logo'></h1>

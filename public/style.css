@@ -69,6 +69,7 @@ article{
 .author-name {
   font-weight: bold;
   font-size: 1.5rem;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 .blog-info {
@@ -86,8 +87,8 @@ article{
 }
 
 .sm-white {
-  font-size: 0.7rem;
-  color: white; 
+  font-size: 0.8rem;
+  color: #0d2931;
   font-weight: bold;
   font-style: italic;
 }
@@ -120,3 +121,19 @@ a:visited{
   color: rgb(6, 103, 116)
 }
 
+@media only screen and (max-width: 500px) {
+  .author-name {
+    margin-top: 0.1rem;
+    font-size: 1.3rem;
+  }
+
+  article {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  img {
+    width: 100%;
+  }
+}
