@@ -15,6 +15,7 @@ After creating and moving into the relevent directory:
  8. To run cypress: `npm run test`
  9. Navigate to cypress/integration directory and delete example and create file: tests.js
 
+
 **USING HEROKU**
 
 Getting started:
